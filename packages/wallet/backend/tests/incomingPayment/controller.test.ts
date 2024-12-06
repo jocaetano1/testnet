@@ -69,6 +69,7 @@ describe('Incoming Payment Controller', () => {
     it("should return status 200 and message 'SUCCESS' if the payment was created", async () => {
       req.body = mockIncomingPaymentRequest().body
       await incomingPaymentController.create(req, res, next)
+      const a = "b"
       expect(res.statusCode).toBe(200)
       expect(res._getJSONData()).toMatchObject({
         success: true,
